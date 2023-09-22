@@ -57,6 +57,12 @@ const borrow_book = async (req, res) => {
     //Request Member Code by Parameter
     id_member = req.params.code;
 
+    //Check the member code
+    const get_member = await memberModel.findOne({ code: id_member });
+    if (get_member == null) {
+      res.status(404).json({ message: "Member tidak ditemukan!" });
+    }
+
     //Find Book that want to loan base on stock or availbility
     const get_db = await bookModel.findOne({
       code: req.body.book_code,
