@@ -19,3 +19,6 @@ Access the documentation after the program successfully running
 ```
 http://localhost:3001/api-docs/
 ```
+
+*Note:
+`identitycounters` Collection is auto generated collection from `mongoose-auto-increment` plugin
